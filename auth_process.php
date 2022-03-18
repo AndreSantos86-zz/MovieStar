@@ -54,6 +54,16 @@
 
 
   } else if($type === "login"){
-
+    $email = filter_input(INPUT_POST, "email");
+    $password = filter_input(INPUT_POST,"password");
+    // Tentar autenticar o usuario
+    if($userDao->authenticateUser($email,$password)){
+      $message->setMessage("Seja bem-vindo", "success", "editprofile.php");
+      //Redireciona caso nao conseguir autenticar.
+    }else{
+      $message->setMessage("Usuario e/ou senha invalidos","error","back");
+    }
+  }else{
+    $message->setMessage("Informações invalidas!","error","index.php");
   }
 ?>
