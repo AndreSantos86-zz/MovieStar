@@ -195,7 +195,8 @@
 }
 
 /* Edit profile */
-#profile-image-container{
+#profile-image-container,
+.profile-image-container{
     width: 150px;
     height: 150px;
     border: 6px solid #f5c518;
@@ -205,24 +206,150 @@
     margin: 15px auto;
 }
 
+.profile-image-container{
+  width: 70px;
+  height: 70px;
+}
+
 .page-description{
-    color: #999;
+  color: #999;
 }
 
 #bio{
     max-width: 400px;
 }
 .form-control.disable{
-    background-color: #BBB;
+  background-color: #BBB;
 }
 
 #change-password-container{
-    margin-top: 40px;
+  margin-top: 40px;
 }
-.edit-profile-page .card-btn
-#add-movie-container .card-btn{
-    width: auto;
+.edit-profile-page .card-btn{
+  width: auto;
 }
+#add-movie-container .card-btn,
+#review-form .card-btn,
+#edit-movie-form .card-btn{
+  width:auto ;
+}
+
+/* Profile */
+.profile-container {
+  justify-content: center;
+}
+
+.profile-container .profile-image {
+  margin: 20px auto;
+}
+
+.about-title {
+  color: #CCC;
+}
+
+.profile-description {
+  max-width: 500px;
+  margin: 20px auto;
+}
+
+.added-movies-container,
+.about-container {
+  padding-top: 20px;
+}
+
+.about-container {
+  text-align: center;
+  background-color: #333;
+  border-bottom: 3px solid #CCC;
+}
+
+.added-movies-container {
+  background-color: #333;
+}
+
+.added-movies-container .movies-container {
+  padding: 20px;
+}
+
+.added-movies-container .movie-card {
+  width: 31%;
+}
+/* New Movie */
+.new-movie-container {
+  text-align: center;
+}
+
+#add-movie-form {
+  text-align: left;
+}
+
+.movie-image-container {
+  height: 400px;
+  min-width: 200px;
+  background-position: center;
+  background-size: cover;
+}
+
+.page-title:after {
+  content: "";
+  width: 300px;
+  border-bottom: 2px solid #F5C518;
+  display: block;
+  margin: 0 auto;
+  padding-top: 7px;
+}
+
+/* Movie */
+.movie-container {
+  text-align: center;
+}
+
+.movie-details {
+  margin: 25px 0;
+}
+
+.pipe {
+  border: 1px solid #333;
+  margin: 0 10px;
+}
+
+#reviews-title {
+  margin-bottom: 25px;
+}
+
+#review-form-container {
+  background-color: #333;
+  padding: 20px;
+}
+
+#review-form-container select,
+#review-form-container textarea {
+  width: 50%;
+}
+
+#reviews-container {
+  margin-top: 20px;
+  padding-top: 20px;
+  border-top: 4px solid #F5C518;
+}
+
+.review {
+  padding: 20px 0;
+  border-bottom: 1px solid #333;
+}
+
+.author-details-container {
+  padding-top: 20px;
+}
+
+.author-name a {
+  color: #F5C518;
+}
+
+.comment-title {
+  color: #999;
+}
+
 /* New Movie */
 .new-movie-container{
     text-align: center;;
@@ -247,6 +374,68 @@
     margin: 0 auto;
     padding-top: 7px;
 }
+
+/* Dashboard */
+#add-movie-container{
+  text-align: right;
+}
+
+#movies-dashboard .table{
+  color: #fff;
+}
+#movies-dashboard .table tr{
+  padding: 15px 0;
+}
+
+.table-movie-title{
+  color: #FFF;
+  font-weight: bold;
+  transition: .5s;
+}
+
+.table-movie-title:hover{
+  color: #f5c518;
+}
+
+.actions-column{
+  max-width: 74px;
+  text-align: center;
+}
+
+.actions-column form{
+  display: inline-block;
+}
+
+.edit-btn,
+.delete-btn{
+  padding: 5px 10px;
+  border-radius: 5px;
+  margin: 0 5px;
+  font-weight: bold;
+  transition: .5s;
+  border: none;
+}
+
+.edit-btn{
+  background-color: #0dcaf0;
+  color: #FFF;
+}
+.edit-btn:hover{
+  background-color: transparent;
+  color: #0dcaf0;
+  text-decoration: none;
+}
+
+.delete-btn{
+  background-color: #dc3545;
+  color: #FFF;
+}
+.delete-btn:hover{
+  background-color: transparent;
+  color: #dc3545;
+  text-decoration: none;
+}
+
 /* FOOTER */
 
 #footer{

@@ -1,12 +1,18 @@
 <?php
  require_once("templates/header.php");
+
  //verifica se o usuario ja esta autenticado
  require_once("models/User.php");
  require_once("dao/UserDao.php");
+ require_once("dao/MovieDAO.php");
+ 
 
  $user = new User();
  $userDao = new UserDao($conn, $BASE_URL);
+ $movieDao = new MovieDao($conn,$BASE_URL);
+
  $userData = $userDao->verifyToken(true);
+ $usermovies = $movieDao->getMoviesByUserId($userData->id);
 
 ?>
   <div id="main-container" class="conteiner-fluid">
@@ -26,21 +32,25 @@
           <th scope="col" class="actions-colunm">Ações</th>
         </thead>      
       <tbody>
+        <?php foreach($usermovies as $movie): ?>
         <tr>
-          <td scope = row>1</td>
-          <td><a href="#" class="table-movie-title">Titulo</a></td>
+          <td scope = row><?=$movie->id?></td>
+          <td><a href="<?=$BASE_URL?>movie.php?id<?=$movie->id?>" class="table-movie-title"><?=$movie->title?></a></td>
           <td><i class="fas fa-star"></i>9</td>
           <td class="actions-column">
-            <a href="#" class="edit-btn">
+            <a href="<?=$BASE_URL?>editmovie.php?id=<?=$movie->id?>" class="edit-btn">
               <i class="far fa-edit"></i>Editar
             </a>
-            <form action="">
+            <form action="<?=$BASE_URL?>movie_process.php" method="POST">
+              <input type="hidden" name="type" value="delete">
+              <input type="hidden" name="id" value="<?=$movie->id?>">
               <button type="submit" class="delete-btn">
                 <i class="fas a-times"></i>Deletar
               </button>
             </form>
           </td>
         </tr>
+        <?php endforeach; ?>
       </tbody>
     </table>
     </div>
